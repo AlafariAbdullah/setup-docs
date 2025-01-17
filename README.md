@@ -1,5 +1,5 @@
-x# How to set up a time based simple automation
-xx passed since (......)
+## How to set up a time based simple automation trigger/condition
+(Time Passes Since X)
 
 ## Introduction
 This tutorial will guide you through creating a time-based automation using Home Assistant’s built-in “Helpers.” In this tutorial, you’ll learn how to:
