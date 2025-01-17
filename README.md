@@ -1,4 +1,4 @@
-# How to set up a time based simple automation
+x# How to set up a time based simple automation
 xx passed since (......)
 
 ## Description
@@ -86,7 +86,7 @@ triggers:
 conditions:
 actions:
 ```
-- Copy either the trigger or the condition and paste it under its own blcok, it should look like this (depending if you choose Triggers or Condtions) :
+- Copy either the trigger or the condition and paste it under its own block, it should look like this (depending if you choose Triggers or Condtions) :
 
 ```yaml
 alias: {Your Title}
@@ -112,61 +112,3 @@ It's simple to update the Helper, Just send this action via either a script, but
     target:
       entity_id: input_datetime.colored_last_laundry_day
 ```
-
-
-## Example Use :
-I use this condition to get a notification when 3 days pass since the last time i did the laundry, the notification updates depending on the day (if it's 5 years later the notification says so).
-The automation consists of: 
-- Data and Time Helper
-- A Script to update the Date and Time helper
-- An automation
-I use a Script to update the Helper for simplisity, since i use the same update in different dashboards.
-
-
-
-
-Helper : Date and time
-Script : 
-```YAML
-sequence:
-  - action: input_datetime.set_datetime
-    metadata: {}
-    data:
-      datetime: "{{ now().strftime('%Y-%m-%d %H:%M:%S') }}"
-    target:
-      entity_id: input_datetime.inbetween_last_laundry_day
-alias: update_inbetween_last_laundry_day
-description: ""
-```
-Automation : 
-```YAML
-alias: Laundry Reminder After 3 Days or more
-description: ""
-triggers:
-  - trigger: template
-    value_template: >-
-      {{ (now().timestamp() -
-      (state_attr('input_datetime.input_datetime_last_laundry_day', 'timestamp')
-      or 0)) > 259200 }}
-conditions:
-  - condition: template
-    value_template: >-
-      {{ (now().timestamp() -
-      (state_attr('input_datetime.input_datetime_last_laundry_day', 'timestamp')
-      or 0)) > 259200 }}
-actions:
-  - action: notify.mobile_app_abdullahs_iphone
-    data:
-      message: >-
-        It's been {{ ((now().timestamp() - 
-        (state_attr('input_datetime.input_datetime_last_laundry_day',
-        'timestamp')  or 0)) // 86400) | int }} days since your last laundry.
-      title: Do the Laundry!
-```
-
-
-
-
-
-## ---
-This tutorial was created in my free time as a fun project. I am a Computer Science freshman at Prince Sultan University (PSU). If you’re interested, feel free to connect with me on [Linkedin](www.linkedin.com/in/alafari-abdullah)
