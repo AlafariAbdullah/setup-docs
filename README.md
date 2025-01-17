@@ -1,4 +1,4 @@
-# How to set up a time based simple automation
+x# How to set up a time based simple automation
 xx passed since (......)
 
 ## Description
@@ -85,7 +85,7 @@ triggers:
 conditions:
 actions:
 ```
-- Copy either the trigger or the condition and paste it under its own blcok, it should look like this (depending if you choose Triggers or Condtions) :
+- Copy either the trigger or the condition and paste it under its own block, it should look like this (depending if you choose Triggers or Condtions) :
 
 ```yaml
 alias: {Your Title}
@@ -111,6 +111,3 @@ It's simple to update the Helper, Just send this action via either a script, but
     target:
       entity_id: input_datetime.colored_last_laundry_day
 ```
-
-
-## Example Use
