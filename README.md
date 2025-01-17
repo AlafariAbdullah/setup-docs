@@ -20,7 +20,7 @@ You’ll modify the Jinja2 script to suit your own setup, and the “Helpers” 
 
 
 ## Prerequisites
-- A working Home Assistant installation (any of the following setups will work: HA OS, Docker, Supervised, or HA Core).
+- A working [Home Assistant](https://www.home-assistant.io/) installation (any of the following setups will work: HA OS, Docker, Supervised, or HA Core).
 
 
 
