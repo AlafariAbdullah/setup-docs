@@ -13,6 +13,7 @@ This Tutorial aims to show you how to create a time based automation using the b
 - [Step 1 : Making a Helper](#step-1--making-a-helper)
 - [Step 2 : Making the Automation trigger/condition](#step-2--making-the-automation-triggercondition)
 - [Updating the Helper](#updating-the-helper)
+- [Example Use](#example-use-)
 
 
 
@@ -31,17 +32,17 @@ What you're gonna do :
 ## Step 1 : Making a Helper
 Making a Helper to store the time you want to start counting after is the simplist way to easily update (if needed) via either a button or anything else.
 - Go to Settings at the bottom left > Devices and Services > Helpers
-![alt text](image-1.png)
-![alt text](image-3.png)
+![alt text](Media/image-1.png)
+![alt text](Media/image-3.png)
 - Create a New Helper
 - Data and/or Time
-![alt text](image-5.png)
+![alt text](Media/image-5.png)
 - Give your new Helper a name and choose "Date and Time"
 - Click Create to create the new helper
-![alt text](image-6.png)
+![alt text](Media/image-6.png)
 - Note : To get the entity ID of your new Helper, click on the three dots at the right and then "Show Settings" Entity ID will be as follows (input_datetime.{HELPERNAME})
-![alt text](image-7.png)
-![alt text](image-8.png)
+![alt text](Media/image-7.png)
+![alt text](Media/image-8.png)
 
 ## Step 2 : Making the Automation trigger/condition
 We will use the Helper as a baseline to calculate xx seconds after {Helper}.
@@ -74,9 +75,9 @@ The basic code you'll insert is :
 
 
 - Go to Settings > Automations & Scenes > Automation 
-![alt text](image-1.png)
+![alt text](Media/image-1.png)
 - Create a new a new automation and click on the three dots on top, then "Edit in YAML"
-![alt text](image-9.png)
+![alt text](Media/image-9.png)
 - You'll have something similar to this
 ```yaml
 alias: {Your Title}
