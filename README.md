@@ -1,15 +1,17 @@
 x# How to set up a time based simple automation
 xx passed since (......)
 
-## Description
-This Tutorial aims to show you how to create a time based automation using the built in "Helpers"
-- Make a Helper that stores the date and time value
-- Create an automation and using ([Jinja2](https://jinja.palletsprojects.com/en/stable/) and simple YAML)
-- Example use
+## Introduction
+This tutorial will guide you through creating a time-based automation using Home Assistant’s built-in “Helpers.” In this tutorial, you’ll learn how to:
+	- Create a Helper to store the date and time.
+	- Use Jinja2 and simple YAML to create automation triggers.
+	- Apply this automation to various use cases, such as:
+	    - Sending a notification to your phone after a certain number of days, like when you haven’t done the laundry.
+	    - Triggering a charger on your Plugged-in HA Dashboard every set number of hours.
+You’ll modify the Jinja2 script to suit your own setup, and the “Helpers” will allow you to easily store and update the base time for automation triggers/condition.
 
 ## Table of Contents
 - [Prerequisites](#prerequisites)
-- [Introduction](#introduction)
 - [Step 1 : Making a Helper](#step-1--making-a-helper)
 - [Step 2 : Making the Automation trigger/condition](#step-2--making-the-automation-triggercondition)
 - [Updating the Helper](#updating-the-helper)
@@ -18,37 +20,30 @@ This Tutorial aims to show you how to create a time based automation using the b
 
 
 ## Prerequisites
-- A Home Assistant installation (either HA OS, Docker, Supervised, and HA Core works)
+- A working Home Assistant installation (any of the following setups will work: HA OS, Docker, Supervised, or HA Core).
 
-## Introduction
-In this tutorial, you'll learn how to make a time based automation trigger. You'd use this trigger with various applications, including:
-- A notification sent to your phone  xx days of not doing the laundry
-- Triggering the charger of your Plugged in HA Dashboard to turn on every xx hours for yy time
 
-What you're gonna do : 
-- You'll use the built in "Helpers" to store and easily update the base time (the last time of ....)
-- You'll modify the Jinja2 script to suit your own setup
+
 
 ## Step 1 : Making a Helper
-Making a Helper to store the time you want to start counting after is the simplist way to easily update (if needed) via either a button or anything else.
-- Go to Settings at the bottom left > Devices and Services > Helpers
+Creating a Helper to store the time you want to start counting from is the simplest way to easily update it (if needed) via a button or another method.
+- Go to **Settings** at the bottom left > **Devices and Services** > **Helpers**
 ![alt text](Media/image-1.png)
 ![alt text](Media/image-3.png)
-- Create a New Helper
-- Data and/or Time
+- Create a **New Helper**
+- **Data and/or Time**
 ![alt text](Media/image-5.png)
 - Give your new Helper a name and choose "Date and Time"
-- Click Create to create the new helper
+- Click **Create** to create the new helper
 ![alt text](Media/image-6.png)
-- Note : To get the entity ID of your new Helper, click on the three dots at the right and then "Show Settings" Entity ID will be as follows (input_datetime.{HELPERNAME})
+- Note : To get the entity ID of your new Helper, click on the three dots at the right and then **Show Settings** Entity ID will be as follows (input_datetime.{HELPERNAME})
 ![alt text](Media/image-7.png)
 ![alt text](Media/image-8.png)
 
 ## Step 2 : Making the Automation trigger/condition
-We will use the Helper as a baseline to calculate xx seconds after {Helper}.
-The basic code you'll insert is :
-
-- Use either of these depending on if you're using it as the main trigger (When x time passes do yy) or as a condition (if i press a button, check if yy time hass pass)
+We will use the Helper as a baseline to calculate the time that has passed after the {Helper}.
+The basic code you’ll need to insert is :
+- Use one of these, depending on whether you’re using it as the main trigger (e.g., “When X time passes, do Y”) or as a condition (e.g., “If I press a button, check if Y time has passed”).
 
 ```YAML
 - condition: template
@@ -65,20 +60,20 @@ The basic code you'll insert is :
       or 0)) > {Time in seconds} }}
 ```
 
-- {The Entity ID of your Helper} -> Find in [Step 1 - Note ](#step-1--making-a-helper)
-- {Time in seconds}: 
-    - hour = 3600
-    - three days = 259200
-    - week = 604800
-    - year = 31,536,000
+- **{The Entity ID of your Helper}** : Find this in [Step 1 - Note ](#step-1--making-a-helper)
+- **{Time in seconds}**: 
+    - 1 hour = 3600
+    - 3 days = 259200
+    - 1 week = 604800
+    - 1 year = 31,536,000
 
 
 
-- Go to Settings > Automations & Scenes > Automation 
+- Next, go to **Settings** > **Automations & Scenes** > **Automation** 
 ![alt text](Media/image-1.png)
-- Create a new a new automation and click on the three dots on top, then "Edit in YAML"
+- Create a new automation and click the three dots at the top, then choose **Edit in YAML**
 ![alt text](Media/image-9.png)
-- You'll have something similar to this
+- You should see something similar to this
 ```yaml
 alias: {Your Title}
 description: "{}"
@@ -86,7 +81,7 @@ triggers:
 conditions:
 actions:
 ```
-- Copy either the trigger or the condition and paste it under its own block, it should look like this (depending if you choose Triggers or Condtions) :
+- Copy either the trigger or the condition (from earlier) and paste it into the appropriate block. It should look like this, depending on whether you choose Triggers or Conditions: :
 
 ```yaml
 alias: {Your Title}
@@ -103,7 +98,7 @@ actions:
 
 
 ## Updating the Helper
-It's simple to update the Helper, Just send this action via either a script, button or anything else
+Updating the Helper is simple. You can do this by sending the following action through a script, button, or any other method :
 ```YAML
   - action: input_datetime.set_datetime
     metadata: {}
@@ -114,15 +109,11 @@ It's simple to update the Helper, Just send this action via either a script, but
 ```
 
 ## Example Use :
-I use this condition to get a notification when 3 days pass since the last time i did the laundry, the notification updates depending on the day (if it's 5 years later the notification says so).
-The automation consists of: 
-- Data and Time Helper
-- A Script to update the Date and Time helper
-- An automation
-I use a Script to update the Helper for simplisity, since i use the same update in different dashboards.
-
-
-
+I use this condition to receive a notification when 3 days have passed since the last time I did the laundry. The notification updates depending on how many days have passed (for example, if it’s 5 years later, the notification will reflect that).
+The automation consists of :
+- A **Date and Time Helper**
+-** A Script** to update the Date and Time Helper
+- An **Automation**
 
 Helper : Date and time
 Script : 
