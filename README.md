@@ -1,8 +1,8 @@
 ## How to set up a time based simple automation trigger/condition
-(Time Passes Since X)
 
 ## Introduction
-This tutorial will guide you through creating a time-based automation using Home Assistant’s built-in “Helpers.” In this tutorial, you’ll learn how to:
+This tutorial will guide you through creating a time-based automation using Home Assistant’s built-in “Helpers.” 
+- In this tutorial, you’ll learn how to:
 	- Create a Helper to store the date and time.
 	- Use Jinja2 and simple YAML to create automation triggers.
 	- Apply this automation to various use cases, such as:
