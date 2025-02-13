@@ -83,13 +83,13 @@ etc.
   - **Cameras & Security**: IP cameras, NVR setup, and a smart door lock
   - **Blinds**: Moes Zigbee Blind Switch
   - **Entertainment & Media**: AppleTV, TCL Android TV, [Plex Media Server](https://www.plex.tv/), [Jellyfin](https://github.com/jellyfin/jellyfin) and [DLNA]((https://www.dlna.org/)) (Details later)
-- **Automation & Scenes**: Custom automations for lighting, blinds, media, and routines
+- **Automation & Scenes**: Custom automations for lighting, blinds, media, and routines (Will have a dedicated page)
 - **Voice Control**: Alexa (Work in progress)
 - **Remote Access & Security**: [Tailscale VPN](https://tailscale.com/), Multi-factor authentication (via Email and OTP Apps)
 
 ## Software & Services
 ### Operating Systems
-macOS, Linux (Ubuntu, Debian, Arch?), Windows
+macOS, Linux (Primarely Debian) and Windows
 
 ### Essential Tools
 Docker, VS Code, Tailscale, SSH, etc.
