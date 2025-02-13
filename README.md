@@ -17,7 +17,9 @@ Personal documentation of my tech stack, homelab, and experiments across my devi
 - [Future Plans](#future-plans)
 
 ## Introduction
-This repository serves as my personal knowledge base, documenting my tech stack, home lab setup, and various configurations across my **Synology NAS, MacBook Air and PC** and other devices. It includes:
+This repository serves as my personal knowledge base, documenting my tech stack, home lab setup,
+ and various configurations across my **Synology NAS, MacBook Air and PC** 
+ and other devices. It includes:
 
 - System setups – Operating systems, configurations and tips and tricks.
 - Self-hosted services – Applications running on my NAS and PC.
@@ -40,7 +42,7 @@ This repository serves as my personal knowledge base, documenting my tech stack,
   - GPU: NVIDIA GeForce GTX 1660 Ti
   - Storage 1: 256GB SAMSUNG MZVLB256HAHQ-000L7
   - Storage 2: 2TB WD(Green) Seagate Barracuda ST2000DM008
-  - Storage 2: 4TB WD(Blue) WDC WD40EZAZ-22SF3B0
+  - Storage 3: 4TB WD(Blue) WDC WD40EZAZ-22SF3B0
 ### NAS
 - Synology DS923+
   - Processor: AMD Ryzen Embedded R1600
@@ -50,10 +52,11 @@ This repository serves as my personal knowledge base, documenting my tech stack,
  
   
 ### Network
-- Router: ZTE MC801A (5G)
-- Switch1: Cisco SG220-26Pw
+Model names and   aren't 
+- Router: (5G)
+- Switch1: Cisco POE
 - Switch2&3: (WIP)
-- Network Video Recorder (NVR): Hikvision DS-7616NI-K2 / 16P
+- Network Video Recorder (NVR): Hikvision
 
 
 - Work in progress!
