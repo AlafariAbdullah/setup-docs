@@ -36,6 +36,22 @@ This repository serves as my **personal knowledge base**, documenting my **tech 
 ---
 
 ## 🖥️ Devices & Infrastructure
+### 🏡 **Smart Home**
+Managing Zigbee devices, automations, and integrating controls for [SmartTVs](https://www.home-assistant.io/integrations/#media-player) and Media Servers([dlna](https://www.dlna.org/), [PLEX](https://www.plex.tv/), [Jellyfin](https://github.com/jellyfin/jellyfin), and more) for seamless smart dashboard control. (Work in Progress)
+- **Backend**: [Home Assistant](https://github.com/home-assistant)
+
+- **Protocols**: Zigbee ([ZHA](https://www.home-assistant.io/integrations/zha/)), [Android Debugging Bridge (ADB)](https://developer.android.com/tools/adb), [Secure Shell (SSH)](https://datatracker.ietf.org/doc/html/rfc4251), [WireGuard](https://www.wireguard.com/) via [Tailscale](https://tailscale.com/), [RTSP](https://datatracker.ietf.org/doc/html/rfc2326).
+etc.
+- **Devices**:
+  - **Zigbee Coordinator**: [SMLIGHT SLZB-06 PoE](https://smlight.tech/product/slzb-06/)
+  - **Lighting**: Moes light siwtches (a mix of 1, 2 and 3 gang switches)
+  - **Sensors**: Moes Motion, temperature, humidity, and door open/close sensor
+  - **Cameras & Security**: IP cameras, NVR setup, and a smart door lock
+  - **Blinds**: Moes Zigbee Blind Switch
+  - **Entertainment & Media**: AppleTV, TCL Android TV, [Plex Media Server](https://www.plex.tv/), [Jellyfin](https://github.com/jellyfin/jellyfin) and [DLNA]((https://www.dlna.org/)) (Details later)
+- **Automation & Scenes**: Custom automations for lighting, blinds, media, and routines (Will have a dedicated page)
+- **Voice Control**: Alexa (Work in progress)
+- **Remote Access & Security**: [Tailscale VPN](https://tailscale.com/), Multi-factor authentication (via Email and OTP Apps)
 
 ### 🌐 **Network**  
 _Identifiable specifications and model numbers aren't here for obvious security reasons 🙂_
@@ -70,22 +86,6 @@ _Identifiable specifications and model numbers aren't here for obvious security 
 - **Storage 2**: 2TB WD (Green) Seagate Barracuda ST2000DM008
 - **Storage 3**: 4TB WD (Blue) WDC WD40EZAZ-22SF3B0
 
-### 🏡 **Smart Home**
-Managing Zigbee devices, automations, and integrating controls for [SmartTVs](https://www.home-assistant.io/integrations/#media-player) and Media Servers([dlna](https://www.dlna.org/), [PLEX](https://www.plex.tv/), [Jellyfin](https://github.com/jellyfin/jellyfin), and more) for seamless smart dashboard control. (Work in Progress)
-- **Backend**: [Home Assistant](https://github.com/home-assistant)
-
-- **Protocols**: Zigbee ([ZHA](https://www.home-assistant.io/integrations/zha/)), [Android Debugging Bridge (ADB)](https://developer.android.com/tools/adb), [Secure Shell (SSH)](https://datatracker.ietf.org/doc/html/rfc4251), [WireGuard](https://www.wireguard.com/) via [Tailscale](https://tailscale.com/), [RTSP](https://datatracker.ietf.org/doc/html/rfc2326).
-etc.
-- **Devices**:
-  - **Zigbee Coordinator**: [SMLIGHT SLZB-06 PoE](https://smlight.tech/product/slzb-06/)
-  - **Lighting**: Moes light siwtches (a mix of 1, 2 and 3 gang switches)
-  - **Sensors**: Moes Motion, temperature, humidity, and door open/close sensor
-  - **Cameras & Security**: IP cameras, NVR setup, and a smart door lock
-  - **Blinds**: Moes Zigbee Blind Switch
-  - **Entertainment & Media**: AppleTV, TCL Android TV, [Plex Media Server](https://www.plex.tv/), [Jellyfin](https://github.com/jellyfin/jellyfin) and [DLNA]((https://www.dlna.org/)) (Details later)
-- **Automation & Scenes**: Custom automations for lighting, blinds, media, and routines (Will have a dedicated page)
-- **Voice Control**: Alexa (Work in progress)
-- **Remote Access & Security**: [Tailscale VPN](https://tailscale.com/), Multi-factor authentication (via Email and OTP Apps)
 
 ## Software & Services
 ### Operating Systems
