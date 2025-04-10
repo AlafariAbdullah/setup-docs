@@ -14,19 +14,22 @@ So, I spent two quick hours writing a pair of simple scripts — one for Windows
 
 No more zipping, no more servers. Just pure Git automation.
 
+*‼️Replace any path with your own path‼️*
 ---
 
 ## 🪟 Windows Script (`minecraft_launcher.bat`)
 
 ```bat
 @echo off
-cd ""C:\Users\abdul\AppData\Roaming\.minecraft\saves\1.0toLatest""
+cd ""C:\Users\abdul\AppData\Roaming\.minecraft\saves\1.WorldName""
+: World Repo Path "Drive:\{User}\AppData\Roamin\.minecraft\saves\NAME"
 
 echo Pulling latest changes...
 git pull
 
 echo Launching Minecraft...
 start "" /WAIT """C:\Program Files (x86)\Minecraft Launcher\MinecraftLauncher.exe"""
+:Minecraft Launcher Path
 
 echo.
 echo Waiting for game process to fully close...
@@ -66,12 +69,14 @@ Note: I added prompts since i didn't find a one click way to make a .bat run in 
 
 # Navigate to the gitrepo (the world folder)
 cd "/Users/Abdullah/Library/Application Support/minecraft/saves/WorldName"
+# World Repo Path "/Users/{User}/Library/Application Support/minecraft/saves/WorldName"
 
 # Pull latest version from github
 git pull
 
 # Open Minecraft
 open "/Applications/Minecraft.app"
+# Path to your Minecraft.app
 
 # Wait until Minecraft is actually running (java process appears -not launcher-)
 until pgrep -x "java" > /dev/null; do
@@ -108,7 +113,6 @@ fi
 - Always exit Minecraft before switching devices.
 - Git handles the history — you just focus on playing 
 - You'd add a custom icon to each and replace your actual game launcher shortcut with the scripts
-
 
 ⸻
 
