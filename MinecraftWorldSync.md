@@ -20,21 +20,40 @@ No more zipping, no more servers. Just pure Git automation.
 
 ```bat
 @echo off
-cd "C:\Users\<YourName>\AppData\Roaming\.minecraft\saves\<YourWorldFolder>"
+cd ""C:\Users\abdul\AppData\Roaming\.minecraft\saves\1.0toLatest""
 
-echo Pulling latest world from GitHub...
+echo Pulling latest changes...
 git pull
 
 echo Launching Minecraft...
-start /wait "" "C:\Path\To\MinecraftLauncher.exe"
+start "" /WAIT """C:\Program Files (x86)\Minecraft Launcher\MinecraftLauncher.exe"""
 
-echo Committing and pushing changes...
+echo.
+echo Waiting for game process to fully close...
+:checkloop
+tasklist | findstr /I java.exe >nul
+if %errorlevel%==0 (
+    echo 🟢 Still running...
+    timeout /t 5 >nul
+    goto checkloop
+)
+echo 🔴 Minecraft has closed.
+
+echo Backing up your world to GitHub...
+
 git add .
-git commit -m "Auto backup"
-git push
+:: Check if there are any changes staged
+git diff --cached --quiet
+if %errorlevel%==0 (
+    echo 🟡 No changes to commit.
+) else (
+    git commit -m "Auto backup via Windows"
+    git push
+    echo ✅ Backup pushed to GitHub!
+)
 
-echo Done!
 pause
+
 ```
 ✅ Replace <YourName> and <YourWorldFolder> with your actual info
 ✅ Replace the path to MinecraftLauncher.exe if it’s different
@@ -72,7 +91,7 @@ git add .
 if git diff --cached --quiet; then
     echo "No changes."
 else
-    git commit -m "Auto backup"
+    git commit -m "Auto backup via MacOS"
     git push
 fi
 
@@ -88,8 +107,11 @@ fi
 - Always exit Minecraft before switching devices.
 - Git handles the history — you just focus on playing 
 - You'd add a custom icon to each and replace your actual game launcher shortcut with the scripts
+
+
 ⸻
 
 Feel free to fork, improve, or reach out if you have suggestions!
+Check out my [Linkedin](https://sa.linkedin.com/in/alafari-abdullah)
 
----
+⸻
