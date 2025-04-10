@@ -57,6 +57,7 @@ pause
 ```
 ✅ Replace <YourName> and <YourWorldFolder> with your actual info
 ✅ Replace the path to MinecraftLauncher.exe if it’s different
+Note: I added prompts since i didn't find a one click way to make a .bat run in the background without showing a CMD window. But I assume there's a way to do so.
 ⸻
 
 🍎 macOS Script (minecraft_launcher.sh)
