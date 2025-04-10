@@ -6,7 +6,7 @@ So, I spent two quick hours writing a pair of simple scripts — one for Windows
 
 ## ⚙️ How It Works
 
-1. Your Minecraft world is stored in a local Git repository.
+1. Your Minecraft world is stored in a [local Git repository](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).
 2. When you launch Minecraft:
    - The script pulls the latest version of the world from GitHub.
 3. When you exit Minecraft:
