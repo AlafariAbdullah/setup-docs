@@ -60,7 +60,7 @@ pause
 Note: I added prompts since i didn't find a one click way to make a .bat run in the background without showing a CMD window. But I assume there's a way to do so.
 ⸻
 
-🍎 macOS Script (minecraft_launcher.sh)
+## 🍎 macOS Script (minecraft_launcher.sh)
 ```
 #!/bin/bash
 
@@ -103,7 +103,7 @@ fi
 
 ⸻
 
-📝 Tips
+## 📝 Tips
 - Make sure both devices use the same branch and repo.
 - Always exit Minecraft before switching devices.
 - Git handles the history — you just focus on playing 
