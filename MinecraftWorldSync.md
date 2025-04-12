@@ -4,6 +4,8 @@ I often play Minecraft on my desktop at home, but when I’m on the go with my l
 
 So, I spent two quick hours writing a pair of simple scripts — one for Windows, one for macOS — to automatically run `git pull` before launching Minecraft, and `git push` after exiting the game. Now my Minecraft world syncs seamlessly between devices using GitHub.
 
+- I assume you'd just use your .minecraft as your repo to sync your settings, mods and all other game related files (including saves), but I am not entirely sure if there'd be compatibility issues or not.
+
 ## ⚙️ How It Works
 
 1. Your Minecraft world is stored in a [local Git repository](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).
