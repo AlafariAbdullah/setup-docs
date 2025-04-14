@@ -1,16 +1,16 @@
-# 🧠 Auto-Sync Minecraft World with Git
+# 🧠 Auto-Sync Minecraft Saves(Worlds) with Git
 
-I often play Minecraft on my desktop at home, but when I’m on the go with my laptop, transferring my world manually used to be a hassle. I had to remote into my desktop, zip the save folder, spin up a Python HTTPS server, and download it from my laptop. That got old quickly.
+I often play Minecraft on my desktop at home, but when I’m on the go with my laptop, transferring my save manually used to be a hassle. I had to remote into my desktop, zip the save folder, spin up a Python HTTPS server, and download it from my laptop. That got old quickly.
 
-So, I spent two quick hours writing a pair of simple scripts — one for Windows, one for macOS — to automatically run `git pull` before launching Minecraft, and `git push` after exiting the game. Now my Minecraft world syncs seamlessly between devices using GitHub.
+So, I spent two quick hours writing a pair of simple scripts — one for Windows, one for macOS — to automatically run `git pull` before launching Minecraft, and `git push` after exiting the game. Now my Minecraft save syncs seamlessly between devices using GitHub.
 
 - I assume you'd just use your .minecraft as your repo to sync your settings, mods and all other game related files (including saves), but I am not entirely sure if there'd be compatibility issues or not.
 
 ## ⚙️ How It Works
 
-1. Your Minecraft world is stored in a [local Git repository](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).
+1. Your Minecraft save is stored in a [local Git repository](https://docs.github.com/en/migrations/importing-source-code/using-the-command-line-to-import-source-code/adding-locally-hosted-code-to-github).
 2. When you launch Minecraft:
-   - The script pulls the latest version of the world from GitHub.
+   - The script pulls the latest version of the save from GitHub.
 3. When you exit Minecraft:
    - The script automatically commits your changes and pushes them to GitHub.
 
@@ -18,7 +18,7 @@ No more zipping, no more remote desktop. Just pure automation.
 
 *‼️Replace any path with your own path‼️*
 ---
-The logic is basically "If a process called Java wasstarted and closed while the script is running, check for changes in the world files and push them"
+The logic is basically "If a process called Java was started and closed while the script is running, check for changes in the world files and push them"
  - I decided to use the java process (instead of "Minecraft {version}") to check if the game is open or not since i don't use java for other purposes. If you use java, replace the process name with process name of your respective version, or you'd try to search for a process with a prefix "Minecraft" but execlude the Launcher, the base for the loop is to determine if the user opened the game (past the launcher) or just opened it and closed it 
 ---
 
@@ -26,8 +26,8 @@ The logic is basically "If a process called Java wasstarted and closed while the
 
 ```bat
 @echo off
-cd ""C:\Users\abdul\AppData\Roaming\.minecraft\saves\1.WorldName""
-: World Repo Path "Drive:\{User}\AppData\Roamin\.minecraft\saves\NAME"
+cd ""C:\Users\abdul\AppData\Roaming\.minecraft\saves\SAVE_Name""
+: Save Repo Path "Drive:\{User}\AppData\Roamin\.minecraft\saves\NAME"
 
 echo Pulling latest changes...
 git pull
@@ -47,7 +47,7 @@ if %errorlevel%==0 (
 )
 echo 🔴 Minecraft has closed.
 
-echo Backing up your world to GitHub...
+echo Backing up your save to GitHub...
 
 git add .
 : Check if there are any changes staged
@@ -63,7 +63,7 @@ if %errorlevel%==0 (
 pause
 
 ```
-✅ Replace <YourName> and <YourWorldFolder> with your actual info
+✅ Replace {User} and <NAME> with your actual info
 ✅ Replace the path to MinecraftLauncher.exe if it’s different
 Note: I added prompts since i didn't find a one click way to make a .bat run in the background without showing a CMD window. But I assume there's a way to do so.
 ⸻
@@ -72,9 +72,9 @@ Note: I added prompts since i didn't find a one click way to make a .bat run in 
 ```
 #!/bin/bash
 
-# Navigate to the gitrepo (the world folder)
-cd "/Users/Abdullah/Library/Application Support/minecraft/saves/WorldName"
-# World Repo Path "/Users/{User}/Library/Application Support/minecraft/saves/WorldName"
+# Navigate to the gitrepo (the save folder)
+cd "/Users/Abdullah/Library/Application Support/minecraft/saves/SAVE_Name"
+# Save Repo Path "/Users/{User}/Library/Application Support/minecraft/saves/NAME"
 
 # Pull latest version from github
 git pull
