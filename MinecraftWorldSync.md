@@ -31,11 +31,11 @@ git pull
 
 echo Launching Minecraft...
 start "" /WAIT """C:\Program Files (x86)\Minecraft Launcher\MinecraftLauncher.exe"""
-:Minecraft Launcher Path
+: Minecraft Launcher Path
 
 echo.
 echo Waiting for game process to fully close...
-:checkloop
+: checkloop
 tasklist | findstr /I java.exe >nul
 if %errorlevel%==0 (
     echo 🟢 Still running...
@@ -47,7 +47,7 @@ echo 🔴 Minecraft has closed.
 echo Backing up your world to GitHub...
 
 git add .
-:: Check if there are any changes staged
+: Check if there are any changes staged
 git diff --cached --quiet
 if %errorlevel%==0 (
     echo 🟡 No changes to commit.
