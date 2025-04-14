@@ -14,11 +14,11 @@ So, I spent two quick hours writing a pair of simple scripts — one for Windows
 3. When you exit Minecraft:
    - The script automatically commits your changes and pushes them to GitHub.
 
-No more zipping, no more servers. Just pure Git automation.
+No more zipping, no more remote desktop. Just pure automation.
 
 *‼️Replace any path with your own path‼️*
 ---
-T logic is basically "If a process called Java wasstarted and closed while the script is running, check for changes in the world files and push them"
+The logic is basically "If a process called Java wasstarted and closed while the script is running, check for changes in the world files and push them"
  - I decided to use the java process (instead of "Minecraft {version}") to check if the game is open or not since i don't use java for other purposes. If you use java, replace the process name with process name of your respective version, or you'd try to search for a process with a prefix "Minecraft" but execlude the Launcher, the base for the loop is to determine if the user opened the game (past the launcher) or just opened it and closed it 
 ---
 
