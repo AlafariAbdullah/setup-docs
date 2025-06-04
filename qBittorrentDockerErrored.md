@@ -109,3 +109,9 @@ If you’re running into similar symptoms—torrents stuck at 0% with no real ac
 Look *inside* the container for permission issues, especially when using bind mounts with Docker and mapped users like `PUID`/`PGID`.
 
 Sometimes the issue isn’t with the internet, tracker, or torrent file at all — it’s simply that qBittorrent lacks write access to the disk.
+
+## 🖤 Credits
+
+Written by [Abdullah Alafari](https://github.com/AlafariAbdullah)
+
+Connect with me on [Linkedin](www.linkedin.com/in/alafari-abdullah)
