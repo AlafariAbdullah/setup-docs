@@ -2,7 +2,6 @@
 
 While self-hosting qBittorrent in Docker on my NAS, I ran into an issue where every torrent I added ended up stuck in an `Errored` state with 0% progress and no tracker activity.
 
-<img width="1386" alt="qBittorrent UI showing 'Errored' state" src="https://github.com/user-attachments/assets/32712a31-4175-4752-973f-72e08dd8f66d" />
 
 ---
 
@@ -10,7 +9,7 @@ While self-hosting qBittorrent in Docker on my NAS, I ran into an issue where ev
 
 Even though:
 - The Web UI loaded fine via Tailscale
-- I could see a healthy number of peers (e.g., 45 on Spider-Man 2)
+- I could see a healthy number of peers (e.g., 45)
 - DHT, PeX, and LSD all showed as "Working"
 - DNS and internet were reachable from the container
 
